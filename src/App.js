@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React, { useState } from "react";
+import OTPInput from "./Components/OTPInput"; // Import OTPInput
+import "./App.css";
 
 function App() {
+  const [otp, setOtp] = useState("");
+
+  // Handle OTP change
+  const handleOTPChange = (otp) => {
+    setOtp(otp);
+    console.log("Entered OTP:", otp); // You can use this OTP for further validation
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h2>Enter OTP</h2>
+      <OTPInput length={4} onChangeOTP={handleOTPChange} />
+      <p>Entered OTP: {otp}</p>
     </div>
   );
 }

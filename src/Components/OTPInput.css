@@ -1,0 +1,26 @@
+/* src/OTPInput.css */
+.otp-input-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 50px;
+}
+
+.otp-input {
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  text-align: center;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.otp-input:focus {
+  border-color: #4caf50; /* Green border when focused */
+}
+
+.otp-input:invalid {
+  border-color: red; /* Red border for invalid input */
+}
